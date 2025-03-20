@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("components/contactUs.html", "contact-container");
     loadComponent("components/services.html", "top-services-container");
     loadComponent("components/socialMedia.html", "social-show-container");
+    loadComponent("components/advisors.html", "advisors-container");
 
 
     // Función para cargar archivos HTML en contenedores específicos

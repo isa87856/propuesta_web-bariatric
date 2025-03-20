@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (imc >= 30 && imc < 39.9) {
             mensaje += "<p class='text-danger'>Tú IMC indica Obesidad, Debes Consultar un especialista para mejorar tu salud. En Bariatric te entregamos asesoria sobre los diferentes procedimientos que estan disponibles para tu rango de IMC, recuerda que nuestros procedimientos van desde el balon intragástrico Spatz, hasta las cirugías bariatricas de mayor complejidad. Todas ellas aseguran un cambio positivo en tu calidad de vida. asesorate con nostros sobre los valores por procedimiento, uso de bono pad, copago de Fonasa y todas las dudas que puedas tener</p>";
         } else {
-            mensaje += "<p class='text-danger'>Tú Índice de Masa Corporal(IMC) indica Obesidad mórbida. Consulta las opciones de tratamiento especializado para ti, además nuestros asesores te entregarán toda la información sobre el <strong>Bono PAD de Fonasa</strong>, ya que tu IMC es uno de los requisitos de este beneficio.</p>";
+            mensaje += "<p class='text-danger'>Tú Índice de Masa Corporal(IMC) indica Obesidad mórbida. Consulta las opciones de tratamiento especializado para ti, nuestros asesores te entregarán toda la información sobre el <strong>Bono PAD de Fonasa</strong>, ya que tu IMC es uno de los requisitos de este beneficio.</p>";
         }
 
         resultadoIMC.innerHTML = mensaje;
