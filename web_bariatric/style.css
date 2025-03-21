@@ -526,9 +526,49 @@ html {
     background: #007bff;
     color: #fff;
 }
+/* Estilos para la sección de Quiénes Somos */
+.about-us-section {
+    padding: 20px 0;
+    background: url('./assets/img/logoBariatric.png') no-repeat center top/cover;
+    background-size: cover;
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+}
 
+.about-us-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Ajustamos la opacidad para mejorar la visibilidad */
+    border-radius: 10px;
+    z-index: -1;
+}
 
-/* Estilos de la sección Quiénes Somos */
+.about-us-content {
+    position: relative;
+    z-index: 1;
+    padding: 40px 20px; /* Aumentamos el padding superior para separar el contenido de la imagen */
+    background: rgba(255, 255, 255, 0.9); /* Fondo semitransparente para mejorar la legibilidad */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-us-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Estilos de la sección Quiénes Somos que incluye mision, vision y valores*/
 .about-section {
     display: flex;
     justify-content: center;
@@ -588,6 +628,7 @@ html {
     color: #d8d3d3;
 }/*fin de about*/
 /* Estilos para la sección de videos */
+/* Estilos para la sección de videos */
 .video-section {
     padding: 60px 0;
     text-align: center;
@@ -615,6 +656,7 @@ html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.video-container video,
 .video-container iframe {
     position: absolute;
     top: 0;
@@ -1021,6 +1063,18 @@ footer {
     .video-container {
         margin-bottom: 20px;
     }
+    .about-us-content {
+        padding: 20px 10px; /* Ajustamos el padding para pantallas pequeñas */
+    }
+
+    .about-us-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-us-content p {
+        font-size: 1rem;
+    }
+    /*seccion que contiene mision, vision y valores*/
     .about-container {
         flex-direction: column;
         align-items: center;
