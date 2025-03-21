@@ -14,66 +14,141 @@ p {
     font-size: 18px;
     text-align: center;
 }
-/* HEADER */
-header {
-    background: linear-gradient(to right, #ffffff, #4d92dd); /* Degradado elegante */
+/* Estilos generales para el header */
+.main-header {
+    background: linear-gradient(to right, #ffffff, #4d92dd);
     padding: 15px 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1050;
+    height: 150px;
 }
 
-header .container {
+.main-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header img {
-    height: 130px;
+.logo img {
+    height: 100px;
+    width: 160px;
 }
 
-header .nav a {
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-left: 20px;
+    position: relative;
+}
+
+.nav-link {
     font-weight: 700;
     font-size: 18px;
-    color: #ffffff !important;
+    color: #ffffff;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
-header .nav a:hover {
-    color: #ffd700 !important; /* Color dorado para efecto premium */
+.nav-link:hover {
+    color: #007bff;
 }
 
-header .nav .dropdown-menu {
-    background: rgba(152, 193, 240, 0.459); /* Mismo tono pero traslúcido */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(152, 193, 240, 0.9);
     border: none;
-    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    backdrop-filter: blur(10px);
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header .nav .dropdown-menu a {
-    color: white !important;
+.dropdown-item {
+    color: white;
     font-weight: 600;
     font-size: 18px;
-
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
 }
 
-header .nav .dropdown-menu a:hover {
+.dropdown-item:hover {
     background: rgba(77, 146, 221, 0.9);
-    color: #ffd700 !important;
-}/*fin header*/
+    color: #ffd700;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilos para el menú móvil */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #333;
+}
+
+.menu-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    display: block;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    display: block;
+    position: absolute;
+    transition: all 0.3s;
+}
+
+.menu-icon::before {
+    top: -10px;
+}
+
+.menu-icon::after {
+    bottom: -10px;
+}
+/*fin header*/
 
 html {
     scroll-behavior: smooth;
 }
 /* Estilos para las tarjetas de los asesores */
-.card.mb-3 {
-    background-color: #90c3f7;
-    border-radius: 15px;
+.card {
+    border: none;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card img {
-    object-fit: cover;
-    height: 100%;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card-body {
@@ -81,38 +156,69 @@ html {
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    height: 100%;
+    padding: 20px;
 }
 
 .card-title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+    color: #1f255f;
+    margin-bottom: 10px;
 }
 
 .card-text {
     font-size: 1rem;
     color: #555;
     text-align: justify;
+    flex-grow: 1;
+    margin-bottom: 20px;
 }
 
 .btn-primary {
     background-color: #007bff;
     border: none;
-    border-radius: 25px;
-    padding: 10px 15px;
-    transition: 0.3s;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .btn-primary:hover {
     background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.img-fluid {
+    border-radius: 10px 0 0 10px;
+}
+
+.text-center {
+    margin-bottom: 20px;
 }
 
 /*fin de asesores*/
 /* Carousel */
 .carousel img {
     height: 500px;
-    object-fit: fill;
-    width: 70%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.carousel-caption {
+    bottom: 20px;
+}
+
+.carousel-caption a.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.carousel-caption a.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 /* Botón flotante de WhatsApp */
 .floating-icons {
@@ -207,30 +313,86 @@ html {
 
 
 /*----------------------------------- Galería de Imágenes---------surgery.html */
+
+#section-gallery {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+#section-gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #142396d5;
+}
+
+#section-gallery p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #142396d5;
+}
+
 .gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .gallery-item {
+    position: relative;
     overflow: hidden;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .gallery-item img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
     display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.gallery-item p {
+    font-size: 1rem;
+    font-weight: 200;
+    margin-bottom: 0;
+    color:#ffffff !important;
+
 }
 
 .gallery-item:hover {
     transform: scale(1.05);
 }
+
+.gallery-item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-info {
+    opacity: 1;
+}
+
+.gallery-item-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.gallery-item-info p {
+    font-size: 1rem;
+    margin-bottom: 0;
+} /*fin sección galería */
 
 
 /*========================================SECCIÓN BONO PAD DE FONASA */
@@ -406,7 +568,7 @@ html {
 
 /* Tarjetas superpuestas */
 .about-card {
-    background: #0b135357;
+    background: #142396d5;
     padding: 10px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.459);
@@ -415,16 +577,58 @@ html {
 }
 
 .about-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #000000;
+    color: #ffffff;
     text-align: center;
 }
 
 .about-card p {
     font-size: 1.2rem;
-    color: #000000;
+    color: #d8d3d3;
+}/*fin de about*/
+/* Estilos generales para la sección de estadísticas/ pantalla nosotros */
+.statistics-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #142396d5;
 }
+
+.statistics-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: lighter;
+    color: #ffffff;
+}
+
+.statistics {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.statistic {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    text-align: center;
+}
+
+.statistic h3 {
+    font-size: 2.5rem;
+    color: #142396d5;
+    margin-bottom: 10px;
+}
+
+.statistic p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: #142396d5;    
+}/* fin de la sección de estadisticas================*/
 /* Estilos generales para la sección de contacto */
 .contact-section {
     position: relative;
@@ -598,7 +802,6 @@ footer {
     color: rgb(0, 0, 0);
     padding: 20px 15px;
     text-align: left;
-
 }
 
 .footer-container {
@@ -621,20 +824,23 @@ footer {
     margin-bottom: 15px;
     color: #000000;
 }
+
 .footer-column p {
     font-size: 1rem;
-    font-weight:400;
+    font-weight: 400;
     margin-bottom: 10px;
     color: #000000;
     text-align: left;
 }
+
 .footer-column ul {
     list-style: none;
     padding: 0;
 }
-.footer-column img{
+
+.footer-column img {
     height: 110px;
-    width: 120;
+    width: 120px;
 }
 
 .footer-column ul li a {
@@ -684,18 +890,46 @@ footer {
 
 /* ===========================MEDIA QUERIES PARA RESPONSIVIDAD */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 20px;
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    header .nav {
+
+    .main-nav.show {
+        display: flex;
+    }
+
+    .nav-list {
         flex-direction: column;
     }
-    header .nav .dropdown-menu {
-        background: rgba(77, 146, 221, 0.9);
-        width: 100%;
+
+    .nav-item {
+        margin-left: 0;
+        margin-bottom: 10px;
     }
+
+    .menu-toggle {
+        display: block;
+    }
+    /* fin del header responsive*/
     .carousel img {
         height: 300px;
+    }
+
+    .carousel-caption {
+        bottom: 10px;
+    }
+
+    .carousel-caption a.btn-primary {
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
     .modal-content {
         width: 90%;
@@ -704,25 +938,45 @@ footer {
     .modal-content button {
         width: 75%;
     }
-    .card.mb-3 {
-        max-width: 100%;
+    .card {
+        margin-bottom: 20px;
     }
-    .card img {
-        height: auto;
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+
+    .btn-primary {
+        padding: 8px 16px;
+    }
+
+    .img-fluid {
+        border-radius: 10px 10px 0 0;
     }
     .footer-container {
         flex-direction: column;
         align-items: center;
+    }
+    .footer-column {
+        margin-bottom: 20px;
         text-align: center;
     }
-    .footer-icons {
-        justify-content: center;
+    .footer-column img {
+        margin: 0 auto;
     }
-    .gallery-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    .gallery-item {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
     }
-
-    
     .about-container {
         flex-direction: column;
         align-items: center;
@@ -743,6 +997,10 @@ footer {
     .about-card {
         width: 90%;
         text-align: center;
+    }
+    .statistic {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
     }
     #procedimientoSection {
         padding: 20px;
@@ -794,5 +1052,64 @@ footer {
     }
 }
 
+@media (max-width: 576px) {
+    .nav-link {
+        font-size: 0.9rem;
+    }
 
-    
+    header img {
+        height: 40px;
+    }
+    .card-body {
+        padding: 10px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+
+    .btn-primary {
+        padding: 6px 12px;
+    }
+    .carousel img {
+        height: 200px;
+    }
+
+    .carousel-caption {
+        bottom: 5px;
+    }
+
+    .carousel-caption a.btn-primary {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    .footer-column h3 {
+        font-size: 0.9rem;
+    }
+
+    .footer-column p {
+        font-size: 0.9rem;
+    }
+
+    .footer-column ul li a {
+        font-size: 0.9rem;
+    }
+
+    .footer-icons a {
+        font-size: 20px;
+    }
+    .statistic {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .gallery-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+

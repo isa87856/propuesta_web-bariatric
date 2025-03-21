@@ -7,12 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("components/calculatorModal.html", "calculator-modal-container");
     loadComponent("components/carouselHome.html", "carousel-home-container");
     loadComponent("components/fnsPad.html", "fonasa-pad-container");
-    loadComponent("components/surgeries.html", "surgeries-container");
     loadComponent("components/aboutCard.html", "about-card-container");
     loadComponent("components/contactUs.html", "contact-container");
     loadComponent("components/services.html", "top-services-container");
     loadComponent("components/socialMedia.html", "social-show-container");
     loadComponent("components/advisors.html", "advisors-container");
+    loadComponent("components/statisticSection.html", "statistics-section-container");
+    loadComponent("components/gallerySection.html", "gallery-section-container");
 
 
     // Función para cargar archivos HTML en contenedores específicos
@@ -43,6 +44,18 @@ document.addEventListener("DOMContentLoaded", function () {
     if (procedimiento) {
         console.log(`Parámetro detectado en URL: ${procedimiento}`);
         cargarProcedimiento(procedimiento);
+    }
+    
+});
+
+// Inicializar el carrusel de Bootstrap
+document.addEventListener('DOMContentLoaded', function () {
+    var myCarousel = document.querySelector('#carouselExample');
+    if (myCarousel) {
+        var carousel = new bootstrap.Carousel(myCarousel, {
+            interval: 2000,
+            wrap: true
+        });
     }
 });
 
@@ -87,3 +100,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
+
+    menuToggle.addEventListener("click", function() {
+        mainNav.classList.toggle("show");
+    });
+});
