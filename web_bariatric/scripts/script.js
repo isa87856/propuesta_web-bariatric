@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("components/advisors.html", "advisors-container");
     loadComponent("components/statisticSection.html", "statistics-section-container");
     loadComponent("components/gallerySection.html", "gallery-section-container");
+    loadComponent("components/populateRed.html", "video-section-container");
 
 
     // Función para cargar archivos HTML en contenedores específicos
