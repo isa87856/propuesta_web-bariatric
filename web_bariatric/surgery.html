@@ -19,31 +19,41 @@
     <!-- Contenido de fnsPad -->
     <div id="fonasa-pad-container"></div>
     <div id="contenedorProcedimientos"></div>
-    <!-- Sección de Procedimientos -->
-    <section class="container mt-5" id="procedimientoSection">
-        <h2 id="nombreProcedimiento" class="text-center text-primary">Selecciona un procedimiento</h2>
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <p id="descripcionProcedimiento">Información sobre el procedimiento seleccionado aparecerá aquí.</p>
-                <button class="btn btn-primary">Contactarnos</button>
-            </div>
-            <div class="col-md-6">
-                <video id="videoProcedimiento" class="img-fluid" controls>
-                    <source src="" type="git-image">
-                    Tu navegador no soporta videos.
-                </video>
-            </div>
+   <!-- Sección de Procedimientos -->
+   <section class="container mt-5" id="procedimientoSection">
+    <h2 id="nombreProcedimiento" class="text-center text-primary">Bariclip</h2>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <p id="descripcionProcedimiento">
+                El Bariclip es un procedimiento innovador y reversible diseñado para ayudar a las personas a perder peso de manera efectiva. 
+                Este método consiste en colocar un dispositivo ajustable en la parte superior del estómago, limitando la cantidad de alimentos que se pueden consumir y promoviendo una sensación de saciedad más rápida. 
+                A diferencia de otros procedimientos bariátricos, el Bariclip no requiere cortes ni alteraciones permanentes en el sistema digestivo, lo que lo convierte en una opción menos invasiva y con menor tiempo de recuperación.
+            </p>
+            <ul>
+                <li>Procedimiento mínimamente invasivo.</li>
+                <li>Reversible y ajustable según las necesidades del paciente.</li>
+                <li>Promueve la pérdida de peso de manera segura y efectiva.</li>
+                <li>Ideal para pacientes que buscan una alternativa no permanente.</li>
+            </ul>
+            <button class="btn btn-primary">Contáctanos</button>
         </div>
-        
-        <!-- Botones de navegación entre procedimientos -->
-        <div class="text-center mt-4">
-            <button class="btn btn-outline-primary" onclick="cargarProcedimiento('bypass')">Bypass Magdi</button>
-            <button class="btn btn-outline-primary" onclick="cargarProcedimiento('bariatricas')">Cirugías Bariátricas</button>
-            <button class="btn btn-outline-primary" onclick="cargarProcedimiento('balon')">Balón Intragástrico SPATZ3</button>
-            <button class="btn btn-outline-primary" onclick="cargarProcedimiento('clinifit')">Método Clinifit</button>
-            <button class="btn btn-outline-primary" onclick="cargarProcedimiento('revisionales')">Cirugías Revisionales</button>
+        <div class="col-md-6">
+            <video id="videoProcedimiento" class="img-fluid" controls>
+                <source src="./assets/video/bariclip.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
         </div>
-    </section>
+    </div>
+    
+    <!-- Botones de navegación entre procedimientos -->
+    <div class="text-center mt-4">
+        <button class="btn btn-outline-primary" onclick="cargarProcedimiento('')">Bypass Magdi</button>
+        <button class="btn btn-outline-primary" onclick="cargarProcedimiento('bariatricas')">Cirugías Bariátricas</button>
+        <button class="btn btn-outline-primary" onclick="cargarProcedimiento('balon')">Balón Intragástrico SPATZ3</button>
+        <button class="btn btn-outline-primary" onclick="cargarProcedimiento('clinifit')">Método Clinifit</button>
+        <button class="btn btn-outline-primary" onclick="cargarProcedimiento('revisionales')">Cirugías Revisionales</button>
+    </div>
+</section>
     <div id="wsp-button-container"></div>
     <!--<div id="calculator-button-container"></div>-->
     <div id="calculator-modal-container"></div>

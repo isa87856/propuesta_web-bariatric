@@ -1,27 +1,50 @@
+/* Paleta de colores */
+:root {
+    --primary-color: #00296b;
+    --secondary-color: #003f88;
+    --tertiary-color: #00509d;
+    --accent-color: #fdc500;
+    --light-accent-color: #ffd500;
+    --cuarter-color: #ffffff;
+}
+
 /* Estilos generales */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
+    color: var(--primary-color);
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700; /* Negrita */
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    margin: 0 0 20px 0;
 }
 
 p {
-    
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    text-align: center;
+    color: var(--secondary-color);
+    margin: 0 0 20px 0;
 }
-/* Estilos generales para el header */
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Estilos para el header */
 .main-header {
-    background: linear-gradient(to right, #ffffff, #4d92dd);
+    background: var(--primary-color);
     padding: 15px 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1050;
-    height: 150px;
 }
 
 .main-header .container {
@@ -31,8 +54,7 @@ p {
 }
 
 .logo img {
-    height: 100px;
-    width: 160px;
+    height: 110px;
 }
 
 .main-nav {
@@ -61,7 +83,7 @@ p {
 }
 
 .nav-link:hover {
-    color: #ffd700;
+    color: var(--accent-color);
 }
 
 .dropdown-menu {
@@ -69,7 +91,7 @@ p {
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgba(152, 193, 240, 0.9);
+    background: var(--secondary-color);
     border: none;
     backdrop-filter: blur(10px);
     list-style: none;
@@ -79,7 +101,7 @@ p {
 }
 
 .dropdown-item {
-    color: white;
+    color: #ffffff;
     font-weight: 600;
     font-size: 18px;
     text-decoration: none;
@@ -88,8 +110,8 @@ p {
 }
 
 .dropdown-item:hover {
-    background: transparent;
-    color: #ffd700;
+    background: var(--tertiary-color);
+    color: var(--light-accent-color);
 }
 
 .nav-item.dropdown:hover .dropdown-menu {
@@ -103,13 +125,13 @@ p {
     border: none;
     cursor: pointer;
     font-size: 28px;
-    color: #333;
+    color: #ffffff;
 }
 
 .menu-icon {
     width: 30px;
     height: 3px;
-    background-color: #333;
+    background-color: #ffffff;
     display: block;
     position: relative;
     transition: all 0.3s;
@@ -120,7 +142,7 @@ p {
     content: '';
     width: 30px;
     height: 3px;
-    background-color: #333;
+    background-color: #ffffff;
     display: block;
     position: absolute;
     transition: all 0.3s;
@@ -133,6 +155,7 @@ p {
 .menu-icon::after {
     bottom: -10px;
 }
+
 /*fin header*/
 
 html {
@@ -396,141 +419,156 @@ html {
 } /*fin sección galería */
 
 
-/*========================================SECCIÓN BONO PAD DE FONASA */
 #section-fonasa {
-    background-color: #ffffff;
-    padding: 50px 0;
-    text-align: center;
-}
-
-#section-fonasa .fonasa-container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 10px;
-    background: rgba(181, 185, 243, 0.603);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#section-fonasa img {
-    width: 250px;
-    margin-bottom: 15px;
-}
-
-#section-fonasa .fonasa-container ul li {
-    font-size: 1.4rem;
-    color: #f80909;
-    background-color: rgba(195, 198, 238, 0.692);
-    text-align: center;
-}
-#section-fonasa .fonasa-info {
-    font-size: 1.2rem;
-    color: #333;
-    line-height: 1.6;
-    text-align: center;
-}
-#section-fonasa .btn {
-    margin-top: 20px;
-    display: inline-block;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: 0.3s;
-}
-
-#section-fonasa .btn:hover {
-    background-color: #0056b3;
-}
-
-/* Estilos generales para la sección de procedimientos */
-#procedimientoSection {
-    background: #e4f16de3; /* Fondo suave */
-    padding: 40px;
-    border-radius: 25px;
+    padding: 60px 0;
+    background: url('./assets/img/fondoFNS.jpg') no-repeat center center/cover;
+    background-size: cover;
+    position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
 }
 
-/* Estilos para el título */
-#nombreProcedimiento {
-    font-size: 28px;
-    font-weight: bold;
-    color: #007bff;
+#section-fonasa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Superposición semitransparente para mejorar la legibilidad */
+    z-index: -1;
+}
+
+.fonasa-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.fonasa-container img {
+    max-width: 300px;
     margin-bottom: 20px;
 }
-#procedimientoSection.container.mt-5{
-    background-color:#aaaaa852;;
-    margin-bottom: 45px;
+
+.fonasa-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color) !important;
 }
-/* E.stilos para la descripción del procedimiento */
-#procedimientoSection .col-md-6 p {
-    font-size: 17px;
-    color: #333;
-    line-height: 1.2;
+
+.fonasa-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.fonasa-container h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: red !important;
+}
+
+.list-group-item {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: red !important;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--light-accent-color);
+}
+
+/* Estilos generales para los procedimientos */
+.procedimiento {
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.493);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.procedimiento h2 {
+    font-size: 1.9rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.procedimiento p {
+    font-size: 1.0rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
     text-align: justify;
 }
-#procedimientoSection.container.mt-5 video{
-        height: 450px;
-        width: max-content;
-        --bs-gutter-x: 10.9rem;
-    }
 
+.procedimiento ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
 
-/* Botón de contacto */
-#procedimientoSection .btn-primary {
-    background-color: #007bff;
-    border: none;
+.procedimiento ul li {
+    font-size: 1.0rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.procedimiento button {
+    font-size: 1.2rem;
     padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 25px;
-    transition: 0.3s;
-    align-items: center;
-
+    background: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-#procedimientoSection .btn-primary:hover {
-    background-color: #0056b3;
+.procedimiento button:hover {
+    background: var(--light-accent-color);
 }
 
-/* Video del procedimiento 
-#videoProcedimiento {
+/* Estilos para los videos */
+.procedimiento iframe,
+.procedimiento video {
     width: 100%;
-    max-height: 350px;
+    height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-/* Estilos para los botones de navegación */
+/* Botones de navegación entre procedimientos */
 #botonesProcedimientos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
     margin-top: 20px;
 }
 
 #botonesProcedimientos button {
+    margin: 5px;
+    font-size: 1rem;
     padding: 8px 16px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 20px;
-    border: 2px solid #007bff;
-    background: transparent;
-    color: #007bff;
-    transition: 0.3s;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
 #botonesProcedimientos button:hover {
-    background: #007bff;
-    color: #fff;
+    background: var(--tertiary-color);
+    color: #ffffff;
 }
 /* Estilos para la sección de Quiénes Somos */
 .about-us-section {
-    padding: 20px 0;
-    background: url('./assets/img/logoBariatric.png') no-repeat center top/cover;
+    padding: 60px 0;
+    background: url('./assets/img/about-background.jpg') no-repeat center top/cover;
     background-size: cover;
     position: relative;
     border-radius: 10px;
@@ -561,12 +599,14 @@ html {
 .about-us-content h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
 .about-us-content p {
     font-size: 1.2rem;
     margin-bottom: 20px;
     text-align: justify;
+    color: var(--secondary-color);
 }
 
 /* Estilos de la sección Quiénes Somos que incluye mision, vision y valores*/
@@ -633,17 +673,21 @@ html {
 .video-section {
     padding: 60px 0;
     text-align: center;
-    background-color: #f8f9fa;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .video-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
 .video-section p {
     font-size: 1.2rem;
     margin-bottom: 40px;
+    color: var(--secondary-color);
 }
 
 .video-container {
@@ -666,6 +710,7 @@ html {
     height: 100%;
     border: none;
 }
+
 /* Estilos generales para la sección de estadísticas/ pantalla nosotros */
 .statistics-section {
     padding: 60px 0;
@@ -711,13 +756,10 @@ html {
 /* Estilos para la sección de contacto */
 .contact-section {
     padding: 60px 0;
-    background: url('./assets/img/fondoContact.jpg') no-repeat center center/cover;
+    background-color: #90bff14f;
     background-size: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 1;
-    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-section::before {
@@ -727,22 +769,22 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(199, 199, 197, 0.63); /* Ajustamos la opacidad para mejorar la visibilidad */
+    background: rgba(255, 255, 255, 0.8); /* Superposición semitransparente */
     border-radius: 10px;
     z-index: -1;
 }
 
 .contact-info {
+    position: relative;
+    z-index: 1;
     padding: 20px;
-    background: transparent;
-    border-radius: 10px;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    color: var(--primary-color);
 }
 
 .contact-info h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #142396d5;
+    color: var(--primary-color);
 }
 
 .contact-info p {
@@ -751,8 +793,9 @@ html {
 }
 
 .contact-info a {
-    color: #142396d5;
+    color: var(--secondary-color);
     text-decoration: none;
+    font-weight: bold;
 }
 
 .contact-info a:hover {
@@ -761,17 +804,14 @@ html {
 
 .contact-info i {
     margin-right: 10px;
-    color: #142396d5;
+    color: var(--accent-color);
+    font-size: 1.5rem;
 }
 
-.map-container {
-    margin-top: 20px;
-    border-radius: 20px;
-    overflow: hidden;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+.map-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-/* fin sección de contacto */
-
 /* ================Sección de Servicios Destacados */
 .servicios-destacados {
     background: #f8f9fa;
@@ -804,171 +844,167 @@ html {
     margin-top: 10px;
     text-decoration: underline;
 }
-/* Sección de Redes Sociales */
-.redes-sociales {
-    background: #007bff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 20px;
-    height: 200px;
-}
-.redes-sociales h3 {
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 35px;
-}
-.redes-sociales .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 100px; /* Mayor separación entre los iconos */
-}
-
-.redes-sociales a {
-    color: white;
-    font-size: 28px;
-    transition: transform 0.3s, color 0.3s;
-}
-
-.d-flex a:hover {
-    color: #ffd700;
-    transform: scale(1.2);
-}
-/* Estilos para la sección de testimonios */
-.testimonials-section {
-    padding: 60px 0;
-    text-align: center;
-    background-color: #f8f9fa;
+/* Estilos para la sección de redes sociales */
+.social-media-section {
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.testimonials-section h2 {
-    font-size: 2.5rem;
+.social-media-section h3 {
+    font-size: 2rem;
     margin-bottom: 20px;
+    color: var(--accent-color);
 }
 
-.testimonials-section p {
-    font-size: 1.2rem;
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    font-size: 1.8rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon:hover {
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.social-icon i {
+    color: #ffffff;
+}
+/* Estilos para la sección de testimonios */
+.testimonial-section {
+    padding: 60px 20px;
+    background: var(--primary-color);
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-section h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
     margin-bottom: 40px;
 }
 
 .testimonial-card {
     background: #ffffff;
-    padding: 20px;
+    color: var(--primary-color);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.testimonial-img {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 15px;
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.blockquote {
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.testimonial-author img {
+    border: 3px solid var(--accent-color);
+}
+
+.testimonial-author span {
     font-size: 1rem;
-    margin-bottom: 0;
+    font-weight: bold;
+    color: var(--secondary-color);
 }
 
-.blockquote-footer {
-    font-size: 0.9rem;
-    color: #6c757d;
-}
 /* ---------------------------------------------------------Footer */
 
-footer {
-    background: linear-gradient(to right, #ffffff, #4d92dd);
-    color: rgb(0, 0, 0);
-    padding: 20px 15px;
-    text-align: left;
+/* Estilos para el footer */
+.main-footer {
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 40px 0;
+    border-top: 5px solid var(--accent-color);
 }
 
-.footer-container {
+.main-footer .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .footer-column {
-    flex: 1;
-    min-width: 200px;
+    flex: 1 1 30%;
     margin-bottom: 20px;
 }
 
 .footer-column h3 {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #000000;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
 }
 
-.footer-column p {
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 10px;
-    color: #000000;
-    text-align: left;
-}
-
-.footer-column ul {
+.footer-links {
     list-style: none;
+    color: #ffffff;
     padding: 0;
+    margin: 0;
 }
 
-.footer-column img {
-    height: 110px;
-    width: 120px;
+.footer-links li {
+    margin-bottom: 10px;
 }
 
-.footer-column ul li a {
+.footer-links a{
+    color: #ffffff;
     text-decoration: none;
-    color: #201c1c;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.footer-column ul li a:hover {
-    color: #4422a3;
+.footer-links a:hover {
+    color: var(--accent-color);
 }
 
-/* Estilos para la sección de contacto */
-.footer-contact {
-    font-size: 0.9rem;
-    color: #050505;
-}
-
-.footer-contact a {
-    color: #262f51d6;
-    text-decoration: none;
-}
-
-.footer-contact a:hover {
-    text-decoration: underline;
-}
-
-/* Redes sociales */
-.footer-icons {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    margin-top: 15px;
+.footer-contact p {
+    margin-bottom: 10px;
+    color: #ffffff;
 }
 
 .footer-icons a {
-    color: #262f51d6;
-    font-size: 24px;
-    transition: transform 0.3s, color 0.3s;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: color 0.3s ease;
 }
 
 .footer-icons a:hover {
-    color: #007bff;
-    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+.footer-column img {
+    margin: 0 auto;
+    display: block;
+    max-width: 150px;
 }
 
 
@@ -1046,16 +1082,13 @@ footer {
     .img-fluid {
         border-radius: 10px 10px 0 0;
     }
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
     .footer-column {
-        margin-bottom: 20px;
+        flex: 1 1 100%;
         text-align: center;
     }
-    .footer-column img {
-        margin: 0 auto;
+
+    .footer-icons {
+        justify-content: center;
     }
     .gallery-item {
         flex: 1 1 calc(50% - 20px);
@@ -1101,20 +1134,29 @@ footer {
         flex: 1 1 calc(50% - 20px);
         max-width: calc(50% - 20px);
     }
-    #procedimientoSection {
-        padding: 20px;
+    .procedimiento {
+        padding: 20px 10px;
     }
 
-    #nombreProcedimiento {
-        font-size: 24px;
+    .procedimiento h2 {
+        font-size: 2rem;
     }
 
-    #descripcionProcedimiento {
-        font-size: 16px;
+    .procedimiento p {
+        font-size: 1rem;
+    }
+
+    .procedimiento ul li {
+        font-size: 1rem;
+    }
+
+    .procedimiento button {
+        font-size: 1rem;
+        padding: 8px 16px;
     }
 
     #botonesProcedimientos button {
-        font-size: 14px;
+        font-size: 0.9rem;
         padding: 6px 12px;
     }
     .servicios-destacados {
@@ -1130,11 +1172,18 @@ footer {
         font-size: 16px;
     }
     
-    .redes-sociales .social-icons {
-        gap: 20px;
+    .social-media-section {
+        padding: 30px 15px;
     }
-    .redes-sociales a {
-        font-size: 24px;
+
+    .social-media-section h3 {
+        font-size: 1.8rem;
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
     }
     
     .contact-container {
@@ -1152,8 +1201,58 @@ footer {
     .contact-info {
         margin-top: 20px;
     }
+    .testimonial-section h2 {
+        font-size: 2rem;
+    }
+
     .testimonial-card {
-        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
+    }
+
+    .testimonial-author span {
+        font-size: 0.9rem;
+    }
+    #section-fonasa {
+        padding: 40px 20px;
+    }
+
+    .fonasa-container h2 {
+        font-size: 2rem;
+    }
+
+    .fonasa-container p {
+        font-size: 1rem;
+    }
+
+    .fonasa-container h3 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+    .contact-section {
+        padding: 40px 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .contact-info i {
+        font-size: 1.2rem;
+    }
+
+    .map-container iframe {
+        height: 250px;
     }
 }
 
@@ -1215,6 +1314,51 @@ footer {
     .gallery-item {
         flex: 1 1 100%;
         max-width: 100%;
+    }
+    .procedimiento h2 {
+        font-size: 1.8rem;
+    }
+
+    .procedimiento p {
+        font-size: 0.9rem;
+    }
+
+    .procedimiento ul li {
+        font-size: 0.9rem;
+    }
+
+    .procedimiento button {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    #botonesProcedimientos button {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    .social-media-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .testimonial-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .testimonial-card {
+        padding: 15px;
+    }
+
+    .testimonial-text {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-author span {
+        font-size: 0.8rem;
     }
 }
 

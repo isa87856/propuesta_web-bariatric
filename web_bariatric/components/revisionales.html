@@ -3,19 +3,22 @@
     <h2 class="text-center text-primary">Cirugías Revisionales</h2>
     <div class="row mt-4">
         <div class="col-md-6">
-            <p>Son procedimientos correctivos para pacientes que han tenido una cirugía bariátrica previa y necesitan ajustes debido a reganancia de peso, complicaciones o falta de resultados esperados.
-
-                <br>¿Cuándo se realizan?<br>
-                ✔ paciente recupera peso post cirugía bariatrica.<br>
-                ✔ Complicaciones como reflujo severo o deficiencias nutricionales.<br>
-                ✔ Ajustes en la anatomía para mejorar resultados.<br><br>
-                
-                 <strong>tipos de cirugías revisionales:</strong> <br>
-                 ✔ Revisión de Manga Gástrica → Convertirla en Bypass Gástrico.<br>
-                 ✔ Ajuste de Bypass Gástrico → Modificar conexiones intestinales.<br>
-                 ✔ Colocación de anillo Mminimizer, para mejores y resultados duraderos.<br>
-                 ✔Cirugías Metabólicas<br>
-                </p>
+            <p id="descripcionProcedimiento">
+                Las cirugías revisionales son procedimientos correctivos diseñados para pacientes que han tenido una cirugía bariátrica previa y necesitan ajustes debido a reganancia de peso, complicaciones o falta de resultados esperados. Estas intervenciones buscan optimizar los resultados y mejorar la calidad de vida del paciente.
+            </p>
+            <ul>
+                <li>Indicadas para pacientes que han recuperado peso después de una cirugía bariátrica.</li>
+                <li>Corrigen complicaciones como reflujo severo o deficiencias nutricionales.</li>
+                <li>Permiten ajustes en la anatomía para mejorar los resultados.</li>
+                <li>Ofrecen opciones personalizadas según las necesidades del paciente.</li>
+            </ul>
+            <h4><strong>Tipos de Cirugías Revisionales:</strong></h4>
+            <ul>
+                <li>Revisión de Manga Gástrica → Convertirla en Bypass Gástrico.</li>
+                <li>Ajuste de Bypass Gástrico → Modificar conexiones intestinales.</li>
+                <li>Colocación de anillo Minimizer para mejores y resultados duraderos.</li>
+                <li>Cirugías Metabólicas.</li>
+            </ul>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" onclick="cargarFormulario('revisionales')">Contactanos</button>
               </div>
         <div class="col-md-6">
@@ -25,13 +28,13 @@
             </video>
         </div>
         <!-- Botones de navegación entre procedimientos -->
-        <div class="text-center mt-4" id="botonesProcedimientos">
-            <button class="btn btn-outline-primary" onclick="cargarProcedimiento('magdi')">Bypass Magnético Magdi</button>
-            <button class="btn btn-outline-primary" onclick="cargarProcedimiento('bariatricas')">Cirugías Bariátricas</button>
-            <button class="btn btn-outline-primary" onclick="cargarProcedimiento('balon')">Balón Intragástrico SPATZ3</button>
-            <button class="btn btn-outline-primary" onclick="cargarProcedimiento('clinifit')">Método Clinifit</button>
-           <!-- <button class="btn btn-outline-primary" onclick="cargarProcedimiento('revisionales')">Cirugías Revisionales</button>-->
-        </div>
+<div class="text-center mt-4" id="botonesProcedimientos">
+    <button class="btn btn-outline-primary" onclick="cargarProcedimiento('magdi')">Bypass Magnético Magdi</button>
+    <button class="btn btn-outline-primary" onclick="cargarProcedimiento('bariatricas')">Cirugías Bariátricas</button>
+    <button class="btn btn-outline-primary" onclick="cargarProcedimiento('clinifit')">Método Clinifit</button>
+    <button class="btn btn-outline-primary" onclick="cargarProcedimiento('revisionales')">Cirugías Revisionales</button>
+    <button class="btn btn-outline-primary" onclick="cargarProcedimiento('bariclip')">Bariclip</button>
+</div>
        
     </div>
 </div>
